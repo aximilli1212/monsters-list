@@ -24,14 +24,14 @@ class App extends Component {
   render(){
     return (
         <div className="App">
-            <CardList name="Yihua" >
-                <h1>Fuck it up</h1>
+            <CardList>
+                {
+                    this.state.monsters.map(monster=>{
+                        return <h1 key={monster.id} className='ashrin'>{monster.name}</h1>
+                    })
+                }
             </CardList>
-          {
-            this.state.monsters.map(monster=>{
-              return <h1 key={monster.id} className='ashrin'>{monster.name}</h1>
-            })
-          }
+
         </div>
     );
   }
