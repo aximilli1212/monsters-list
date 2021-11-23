@@ -1,16 +1,12 @@
 import React from 'react';
+import './search-box-styles.css'
 
 export const SearchBox  = props =>{
-    let searchField = '';
-    const filteredMonsters = props.monsters.filter(monster => {
-        return monster.name.toLowerCase().includes(searchField.toLowerCase())
-    });
-
-
 
     return  <input
+        className='search'
         type='search'
-        placeholder='Find Monster'
-        onChange={e=> this.setState({searchField: e.target.value})}
+        placeholder={props.placeholder}
+        onChange={props.handleChange}
     />
 }
